@@ -7,18 +7,18 @@ class CoffeShop extends ChangeNotifier {
     // black coffe
     Coffe(name: "Long Black", price: "4.10", imagepath: "lib/images/black.png"),
     //latte
-    Coffe(name: "Long Black", price: "4.20", imagepath: "lib/images/latte.png"),
+    Coffe(name: "Latte", price: "4.20", imagepath: "lib/images/latte.png"),
 
     //expresso
     Coffe(
-      name: "Long Black",
+      name: "Espresso",
       price: "4.10",
-      imagepath: "lib/images/expresso.png",
+      imagepath: "lib/images/espresso.png",
     ),
 
     // iced coffe
     Coffe(
-      name: "Long Black",
+      name: "Iced Coffe",
       price: "4.10",
       imagepath: "lib/images/iced_coffe.png",
     ),
