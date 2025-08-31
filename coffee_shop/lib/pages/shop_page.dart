@@ -17,6 +17,8 @@ class _ShopPageState extends State<ShopPage> {
     Provider.of<CoffeShop>(context, listen: false).addItemToCart(coffe);
   }
 
+  String searchText = '';
+
   @override
   Widget build(BuildContext context) {
     return Consumer<CoffeShop>(
@@ -24,32 +26,69 @@ class _ShopPageState extends State<ShopPage> {
         child: Padding(
           padding: const EdgeInsets.all(25.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // heading message
               const Text(
-                "How would you like your coffee?",
-                style: TextStyle(fontSize: 20),
-              ), // Text
-              const SizedBox(height: 25),
-              // List of coffe to buy
+                "How do you like your coffee?",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.brown,
+                ),
+              ),
+              const SizedBox(height: 18),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search coffee...',
+                  prefixIcon: Icon(Icons.search, color: Colors.brown.shade300),
+                  filled: true,
+                  fillColor: Colors.brown.shade50,
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 0,
+                    horizontal: 16,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    searchText = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 18),
               Expanded(
                 child: ListView.builder(
                   itemCount: value.coffeShop.length,
                   itemBuilder: (context, index) {
-                    // get individual coffe
                     Coffe eachCoffe = value.coffeShop[index];
-
-                    // return the title for this coffe
+                    if (searchText.isNotEmpty &&
+                        !eachCoffe.name.toLowerCase().contains(
+                          searchText.toLowerCase(),
+                        )) {
+                      return const SizedBox.shrink();
+                    }
                     return CoffeTile(
                       coffe: eachCoffe,
-                      onPressed: () => addToCart(eachCoffe),
+                      onPressed: () {
+                        addToCart(eachCoffe);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('${eachCoffe.name} added to cart!'),
+                            backgroundColor: Colors.brown.shade200,
+                            duration: const Duration(milliseconds: 1200),
+                          ),
+                        );
+                      },
                     );
                   },
                 ),
               ),
-            ], // children
-          ), // Column
-        ), // Padding
+            ],
+          ),
+        ),
       ),
     );
   }
