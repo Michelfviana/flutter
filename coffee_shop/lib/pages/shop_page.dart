@@ -1,3 +1,4 @@
+import 'package:coffee_shop/components/coffe_tile.dart';
 import 'package:coffee_shop/models/coffe.dart';
 import 'package:coffee_shop/models/coffe_shop.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class _ShopPageState extends State<ShopPage> {
                     Coffe eachCoffe = value.coffeShop[index];
 
                     // return the title for this coffe
-                    return ListTile(title: Text(eachCoffe.name));
+                    return CoffeTile(coffe: eachCoffe);
                   },
                 ),
               ),

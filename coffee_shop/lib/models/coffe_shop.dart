@@ -20,12 +20,12 @@ class CoffeShop extends ChangeNotifier {
     Coffe(
       name: "Iced Coffe",
       price: "4.10",
-      imagepath: "lib/images/iced_coffe.png",
+      imagepath: "lib/images/iced-coffee.png",
     ),
   ];
 
   //user cart
-  List<Coffe> _userCart = [];
+  final List<Coffe> _userCart = [];
 
   //get coffe list
   List<Coffe> get coffeShop => _shop;
