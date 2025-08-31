@@ -2,6 +2,9 @@ import 'package:coffee_shop/components/bottom_nav_bar.dart';
 import 'package:coffee_shop/const.dart';
 import 'package:flutter/material.dart';
 
+import 'cart_page_.dart';
+import 'shop_page.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -18,13 +21,13 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  //pages 
+  //pages
   final List<Widget> _pages = [
     // shop page
     ShopPage(),
 
     CartPage(),
-  ]
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: MyBottomNavbar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
+      body: _pages[_selectedIndex],
     );
   }
 }
