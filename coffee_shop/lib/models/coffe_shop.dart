@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'coffe.dart';
 
-class CoffeShop {
+class CoffeShop extends ChangeNotifier {
   // coffe for sale list
   final List<Coffe> _shop = [
     // black coffe
