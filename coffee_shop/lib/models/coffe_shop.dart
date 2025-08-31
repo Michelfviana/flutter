@@ -33,8 +33,15 @@ class CoffeShop extends ChangeNotifier {
   // get user cart
   List<Coffe> get userCart => _userCart;
 
+  // add item to cart
+  void addItemToCart(Coffe coffe) {
+    _userCart.add(coffe);
+    notifyListeners();
+  }
+
   // remove item from cart
   void addItemCArt(Coffe coffe) {
     _userCart.remove(coffe);
+    notifyListeners();
   }
 }
