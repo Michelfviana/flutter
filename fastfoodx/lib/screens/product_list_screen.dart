@@ -5,7 +5,11 @@ class ProductListScreen extends StatelessWidget {
   final List<Product> products;
   final Function(Product) onAddToCart;
 
-  const ProductListScreen({required this.products, required this.onAddToCart, super.key});
+  const ProductListScreen({
+    required this.products,
+    required this.onAddToCart,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

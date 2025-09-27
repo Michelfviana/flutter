@@ -23,7 +23,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Promoção do dia
-            const Text('Promoção do dia', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              'Promoção do dia',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 8),
             Card(
               elevation: 4,
@@ -32,21 +35,35 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container( // Placeholder para a imagem
+                    Container(
+                      // Placeholder para a imagem
                       height: 150,
                       color: Colors.grey[200],
                       child: const Center(child: Text('Imagem do produto')),
                     ),
                     const SizedBox(height: 16),
-                    const Text('Cheeseburger', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    const Text(
+                      'Cheeseburger',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     const Text('Bacon, queijo e alface'),
-                    const Text('R\$ 12,00', style: TextStyle(fontSize: 18, color: Colors.green)),
+                    const Text(
+                      'R\$ 12,00',
+                      style: TextStyle(fontSize: 18, color: Colors.green),
+                    ),
                     const SizedBox(height: 16),
                     ElevatedButton(
-                      onPressed: () { /* Adicionar ao carrinho e ir para o carrinho */ },
-                      child: const Text('Pedir agora'),
-                      style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 50)),
-                    )
+                      onPressed: () {
+                        /* Adicionar ao carrinho e ir para o carrinho */
+                      },
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(double.infinity, 50),
+                      ),
+                      child: const Text('Adicionar ao carrinho'),
+                    ),
                   ],
                 ),
               ),
@@ -54,16 +71,28 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Categorias
-            const Text('Escolha uma categoria:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              'Escolha uma categoria:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                ElevatedButton(onPressed: () => onCategorySelected(1), child: const Text('Bebidas')),
-                ElevatedButton(onPressed: () => onCategorySelected(2), child: const Text('Pizzas')),
-                ElevatedButton(onPressed: () => onCategorySelected(3), child: const Text('Sanduíches')),
+                ElevatedButton(
+                  onPressed: () => onCategorySelected(1),
+                  child: const Text('Bebidas'),
+                ),
+                ElevatedButton(
+                  onPressed: () => onCategorySelected(2),
+                  child: const Text('Pizzas'),
+                ),
+                ElevatedButton(
+                  onPressed: () => onCategorySelected(3),
+                  child: const Text('Sanduíches'),
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

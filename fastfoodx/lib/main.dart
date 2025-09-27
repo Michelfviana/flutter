@@ -82,10 +82,22 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Início'),
-          BottomNavigationBarItem(icon: Icon(Icons.local_drink), label: 'Bebidas'),
-          BottomNavigationBarItem(icon: Icon(Icons.local_pizza), label: 'Pizzas'),
-          BottomNavigationBarItem(icon: Icon(Icons.fastfood), label: 'Sanduíches'),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Carrinho'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_drink),
+            label: 'Bebidas',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_pizza),
+            label: 'Pizzas',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fastfood),
+            label: 'Sanduíches',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Carrinho',
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.red,

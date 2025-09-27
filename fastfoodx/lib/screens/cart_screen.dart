@@ -26,7 +26,9 @@ class CartScreen extends StatelessWidget {
                   subtitle: Text('R\$ ${item.price.toStringAsFixed(2)}'),
                   trailing: IconButton(
                     icon: const Icon(Icons.delete),
-                    onPressed: () { /* Lógica para remover item */ },
+                    onPressed: () {
+                      /* Lógica para remover item */
+                    },
                   ),
                 );
               },
@@ -37,7 +39,13 @@ class CartScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Total: R\$ ${_total.toStringAsFixed(2)}', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                Text(
+                  'Total: R\$ ${_total.toStringAsFixed(2)}',
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 ElevatedButton(
                   onPressed: () {
                     showDialog(
@@ -55,10 +63,10 @@ class CartScreen extends StatelessWidget {
                     );
                   },
                   child: const Text('Finalizar pedido'),
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
